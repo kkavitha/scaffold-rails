@@ -1,0 +1,22 @@
+<h1>Products#edit</h1>
+<div class="container">
+  <%= form_for :product, url: products_path, local: true do |form| %>
+  <p>
+    <%= form.label "Label" %><br>
+    <%= form.text_field :label %>
+  </p>
+  <p>
+    <%= form.label "Installation Priority" %><br>
+    <%= form.number_field :installation_priority %>
+  </p>
+  <p>
+    <%= form.label "Details" %><br>
+    <%= form.text_area :details %>
+  </p>
+
+  <p>
+    <%= link_to 'Back', products_path %> |
+    <%= link_to 'Cancel', products_path %>
+  </p>
+  <% end %>
+</div>
