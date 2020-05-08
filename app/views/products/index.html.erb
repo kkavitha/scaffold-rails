@@ -1,22 +1,22 @@
 
 <div class="container">
   <%= form_for :product, url: products_path, local: true do |form| %>
-  <p>
+  <div class="form-group mb-2">
     <%= form.label "Label" %><br>
-    <%= form.text_field :label %>
-  </p>
-  <p>
+    <%= form.text_field :label%>
+  </div>
+  <div class="form-group">
     <%= form.label "Installation Priority" %><br>
     <%= form.number_field :installation_priority %>
-  </p>
-  <p>
+  <div>
+  <div class="form-group">
     <%= form.label "Details" %><br>
     <%= form.text_area :details %>
-  </p>
+  <div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+  <div>
+    <%= form.submit  class: 'btn btn-primary mb-2'%>
+  <div>
   <% end %>
 </div>
 
