@@ -4,8 +4,14 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(allowed_params)
-    redirect_to products_url if @product.save
+    @product = Product.new(allowed_params) 
+    @product.save
+
+    if @product.errors.present?
+      redirect_to root_path, notice: @product.errors.full_messages.join(',')
+    else
+      redirect_to products_url
+    end
   end
 
   def edit
